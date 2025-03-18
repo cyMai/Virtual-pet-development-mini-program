@@ -1,0 +1,206 @@
+/* pages/timer/timer.wxss */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 60rpx;
+}
+.background-image {
+  position: fixed;
+  z-index: -1;
+  height: 100vh; 
+}
+.task-input-wrap {
+  width: 100%;
+  padding: 20rpx 40rpx;
+  z-index: 2;
+  position: fixed;
+  top: 60rpx;
+  left: 0;
+  margin-bottom: 20rpx;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.task-input-label {
+  font-size: 36rpx;
+  color: #333;
+  margin-bottom: 20rpx;
+  margin-left: 10rpx;
+  font-weight: 400;
+}
+
+.task-input {
+  width: 70%;
+  height: 100rpx;
+  background: #f5f5f5;
+  border-radius: 40rpx;
+  text-align: left;
+  font-size: 28rpx;
+  color: #333;
+  padding: 0 40rpx;
+}
+
+.time-picker-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30rpx;
+  z-index: 2;
+  position: absolute;
+  top: 360rpx;
+}
+
+.time-picker {
+  width: 400rpx;
+  height: 420rpx;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.picker-item {
+  line-height: 120rpx;
+  font-size: 72rpx;
+  color: #333;
+  font-weight: 400;
+}
+
+.task-select {
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
+  padding: 20rpx;
+}
+
+.task-select text {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.arrow {
+  color: #999;
+}
+
+.start-btn {
+  position: fixed;
+  bottom: 290rpx;
+  width: 500rpx;
+  height: 98rpx;
+  background: #000000;
+  color: #FFFFFF;
+  font-size: 32rpx;
+  border-radius: 49rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.start-btn::after {
+  border: none;
+}
+
+.placeholder {
+  color: #999;
+}
+
+/* 添加弹窗样式 */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  width: 80%;
+  background: white;
+  border-radius: 20rpx;
+  padding: 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-time {
+  font-size: 48rpx;
+  color: #333;
+  margin-bottom: 30rpx;
+}
+
+.modal-box {
+  width: 200rpx;
+  height: 200rpx;
+  margin: 20rpx 0;
+}
+
+.modal-box image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.modal-text {
+  font-size: 32rpx;
+  color: #333;
+  margin: 20rpx 0;
+}
+
+.modal-subtext {
+  font-size: 28rpx;
+  color: #666;
+  margin-bottom: 30rpx;
+}
+
+.modal-btns {
+  display: flex;
+  gap: 20rpx;
+  margin-top: 20rpx;
+  width: 100%;
+  justify-content: center;
+}
+
+.modal-btn {
+  width: 80rpx;
+  height: 50rpx;
+  background: #f5f5f5;
+  border-radius: 25rpx;
+  font-size: 24rpx;
+  color: #333;
+  padding: 0;
+  min-width: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-btn::after {
+  border: none;
+}
+
+.back-icon {
+  position: absolute;
+  top: 20rpx;
+  left: 20rpx;
+  width: 60rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+
+.back-icon text {
+  font-size: 48rpx;
+  color: #999;
+  font-weight: 200;
+}
+

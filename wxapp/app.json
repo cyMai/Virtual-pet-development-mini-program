@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/user/user",
+    "pages/myPet/myPet",
+    "pages/login/login",
+    "pages/register/register",
+    "pages/time/time",
+    "pages/game/game",
+    "pages/2048/2048",
+    "pages/guess/guess",
+    "pages/record/record",
+    "pages/wardrobe/wardrobe",
+    "pages/activity/activity",
+    "pages/focus/focus",
+    "pages/manual/manual",
+    "pages/user/userCenter/userCenter"
+  ],
+  "usingComponents": {
+    "van-button": "@vant/weapp/button"
+  },
+  "tabBar": {
+    "color": "#bfbfbf",
+    "selectedColor": "#2c2c2c",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/index/index",
+        "iconPath": "images/svg/home.jpg",
+        "selectedIconPath": "images/svg/home_select.jpg"
+      },
+      {
+        "text": "时间",
+        "pagePath": "pages/time/time",
+        "iconPath": "images/svg/time.jpg",
+        "selectedIconPath": "images/svg/time_select.jpg"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/user/user",
+        "iconPath": "images/svg/me.jpg",
+        "selectedIconPath": "images/svg/me.jpg"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "宠物小程序"
+  },
+  "rendererOptions": {
+    "skyline": {
+      "defaultDisplayBlock": true,
+      "disableABTest": true,
+      "sdkVersionBegin": "3.0.0",
+      "sdkVersionEnd": "15.255.255"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

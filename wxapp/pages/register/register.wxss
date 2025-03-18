@@ -1,0 +1,108 @@
+/* pages/login/login.wxss */
+page {
+  background: #f7f7f7;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.background {
+  width: 90%;
+  margin-top: 80rpx;
+}
+
+.title {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 40rpx;
+  text-align: center;
+}
+
+.input-box {
+  background: #fff;
+  border-radius: 12rpx;
+  padding: 20rpx 30rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+}
+
+.inputs {
+  height: 80rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.plas {
+  color: #999;
+}
+
+.click {
+  background: #333;
+  color: white;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  border-radius: 45rpx;
+  font-size: 32rpx;
+  margin-top: 60rpx;
+  box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.1);
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  margin-top: 40rpx;
+  padding: 0 20rpx;
+}
+
+.option-btn {
+  color: #666;
+  font-size: 28rpx;
+  padding: 20rpx;
+  text-align: center;
+}
+
+.first {
+  width: 90%;
+  height: 100rpx;
+  margin-top: 80rpx;
+  margin-left: 5%;
+  margin-right: 5%;
+  display: flex;
+  /*Flex是Flexible Box的缩写，意为"弹性布局"，用来为盒状模型提供最大的灵活性*/
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+
+
+.second {
+  width: 90%;
+  height: 100rpx;
+  margin-top: 30rpx;
+  margin-left: 5%;
+  margin-right: 5%;
+  display: flex;
+  /*Flex是Flexible Box的缩写，意为"弹性布局"，用来为盒状模型提供最大的灵活性*/
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+
+
+.flas {
+  font-size: 30rpx;
+  color: #CCCCCC;
+}
+
+
+.no {
+  color: black;
+  font-size: 28rpx;
+  margin-left: 15rpx;
+  font-family: PingFangSC-regular;
+}

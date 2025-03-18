@@ -1,0 +1,37 @@
+<!--pages/manual/manual.wxml-->
+<view class="container">
+  <!-- 图片展示区域 -->
+  <swiper class="manual-swiper" bindchange="onSwiperChange">
+    <swiper-item wx:for="{{manualPages}}" wx:key="id">
+      <image src="{{item.img}}" mode="aspectFit" class="manual-image"></image>
+    </swiper-item>
+  </swiper>
+
+  <!-- 页码指示器 -->
+  <view class="page-indicator">
+    {{currentPage + 1}}/{{manualPages.length || 1}}
+  </view>
+
+  <!-- 添加按钮 -->
+  <view class="add-btn" bindtap="showAddModal">
+    <text class="add-icon">+</text>
+  </view>
+
+  <!-- 添加图片弹窗 -->
+  <view class="modal" wx:if="{{showModal}}">
+    <view class="modal-content">
+      <view class="modal-title">添加饲养指南</view>
+      <view class="upload-section" bindtap="chooseImage">
+        <image wx:if="{{tempImage}}" src="{{tempImage}}" mode="aspectFit" class="preview-image"></image>
+        <view wx:else class="upload-placeholder">
+          <text class="upload-icon">+</text>
+          <text>点击上传图片</text>
+        </view>
+      </view>
+      <view class="modal-btns">
+        <button class="cancel-btn" bindtap="hideModal">取消</button>
+        <button class="confirm-btn" bindtap="submitImage">确定</button>
+      </view>
+    </view>
+  </view>
+</view>

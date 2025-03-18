@@ -1,0 +1,26 @@
+<!--pages/activity/activity.wxml-->
+<view class="container">
+  <view class="pet-info">
+    <image class="pet-image" src="/images/dog/dog3.jpg" mode="aspectFit"></image>
+    <view class="mood-bar">
+      <text>心情值</text>
+      <view class="progress-bar">
+        <view class="progress" style="width: {{petInfo.mood}}%"></view>
+      </view>
+      <text>{{petInfo.mood}}%</text>
+    </view>
+  </view>
+
+  <button class="start-btn" bindtap="startActivity" disabled="{{showResult}}">开始活动</button>
+
+  <view class="result-modal" wx:if="{{showResult}}">
+    <view class="result-content">
+      <view class="activity-type">{{result.type}}</view>
+      <view class="activity-desc">{{result.description}}</view>
+      <view class="mood-change {{result.moodChange >= 0 ? 'positive' : 'negative'}}">
+        心情值 {{result.moodChange >= 0 ? '+' : ''}}{{result.moodChange}}
+      </view>
+      <button class="confirm-btn" bindtap="closeResult">确定</button>
+    </view>
+  </view>
+</view>

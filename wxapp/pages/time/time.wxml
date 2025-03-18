@@ -1,0 +1,40 @@
+<view class="container">
+  <view class="container">
+    <image class="background-image" src="/images/com/study4.jpg"></image>
+  </view>
+  <view class="task-input-wrap">
+    <view class="task-input-label">输入今日专注任务：</view>
+    <input class="task-input" placeholder="请输入任务" placeholder-class="placeholder" value="{{taskName}}" bindinput="onTaskInput" />
+  </view>
+
+  <view class="time-picker-section">
+    <picker-view class="time-picker" value="{{pickerValue}}" bindchange="onTimeChange" indicator-style="height: 120rpx; background: transparent;">
+      <picker-view-column>
+        <view wx:for="{{timeArray}}" wx:key="index" class="picker-item">
+          {{item}}:00
+        </view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+
+  <button class="start-btn" bindtap="startFocus">开始专注</button>
+
+  <!-- 弹窗 -->
+  <view class="modal" wx:if="{{showModal}}">
+    <view class="modal-content">
+      <view class="back-icon" bindtap="closeModal">
+        <text>×</text>
+      </view>
+      <view class="modal-time">{{currentTime}}</view>
+      <view class="modal-box">
+        <image src="/images/dog/dog3.jpg" mode="aspectFit"></image>
+      </view>
+      <view class="modal-text">{{petInfo.name}}的准备箱</view>
+      <view class="modal-subtext">你希望在此过程中，{{petInfo.name}}陪你做什么？</view>
+      <view class="modal-btns">
+        <button class="modal-btn" bindtap="confirmFocus" data-type="study">学习</button>
+        <button class="modal-btn" bindtap="confirmFocus" data-type="play">玩耍</button>
+      </view>
+    </view>
+  </view>
+</view>

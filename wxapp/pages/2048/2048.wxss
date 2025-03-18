@@ -1,0 +1,163 @@
+.container {
+  min-height: 100vh;
+  background: #FFFFFF;
+  padding: 40rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0;
+}
+
+.score-board {
+  display: flex;
+  gap: 100rpx;
+  margin-top: 60rpx;
+  margin-bottom: 20rpx;
+  width: 100%;
+  justify-content: center;
+}
+
+.score-box {
+  padding: 30rpx 50rpx;
+  background: #F0F0F0;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.score-box .label {
+  font-size: 36rpx;
+  color: #666;
+}
+
+.score-box .value {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #333;
+  margin-top: 8rpx;
+}
+
+.tip-section {
+  display: flex;
+  align-items: center;
+  gap: 40rpx;
+  margin-top: -10rpx;
+  margin-bottom: 60rpx;
+  position: relative;
+  z-index: 1;
+}
+
+.tip {
+  font-size: 28rpx;
+  color: #999;
+  font-weight: 500;
+  text-shadow: 0 0 4rpx #fff;
+}
+
+.action-btn {
+  padding: 12rpx 24rpx;
+  background: #F0F0F0;
+  border-radius: 30rpx;
+  font-size: 24rpx;
+  color: #666;
+}
+
+/* 2048游戏区域样式 */
+.game-board {
+  width: 720rpx;
+  height: 720rpx;
+  margin-top: -20rpx;
+  background: #E0E0E0;
+  border-radius: 12rpx;
+  padding: 16rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+  transform: scale(0.9);
+  transform-origin: top center;
+  margin-bottom: 120rpx;
+}
+
+/* 游戏网格行 */
+.grid-row {
+  display: flex;
+  gap: 16rpx;
+  flex: 1;
+}
+
+/* 游戏单元格 */
+.grid-cell {
+  flex: 1;
+  background: #F5F5F5;
+  border-radius: 8rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 52rpx;  /* 相应增大数字大小 */
+  font-weight: 500;
+  color: #333;
+}
+
+/* 数字块样式 */
+.cell-2 { background: #FFF; }
+.cell-4 { background: #F8F8F8; }
+.cell-8 { background: #FFA07A; color: white; }
+.cell-16 { background: #FF8C00; color: white; }
+.cell-32 { background: #FF6347; color: white; }
+.cell-64 { background: #FF4500; color: white; }
+.cell-128 { background: #FFD700; color: white; }
+.cell-256 { background: #FFA500; color: white; }
+.cell-512 { background: #FF8C00; color: white; }
+.cell-1024 { background: #FF7F50; color: white; }
+.cell-2048 { background: #FF4500; color: white; }
+
+/* 合成弹窗 */
+.merge-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  width: 480rpx;
+  height: 520rpx;
+  background: white;
+  border-radius: 20rpx;
+  padding: 40rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-image {
+  width: 240rpx;
+  height: 240rpx;
+  margin-bottom: 40rpx;
+}
+
+.modal-content text {
+  font-size: 32rpx;
+  color: #333;
+  margin-bottom: 40rpx;
+}
+
+.modal-btn {
+  padding: 16rpx 48rpx;
+  font-size: 28rpx;
+  background: #F5F5F5;
+  color: #666;
+  border-radius: 12rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+}
+
+.modal-btn:active {
+  background: #EEEEEE;
+} 

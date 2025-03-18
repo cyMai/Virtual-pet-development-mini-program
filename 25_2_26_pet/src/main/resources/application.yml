@@ -1,0 +1,26 @@
+#数据库的配置
+spring:
+  datasource:
+    username: mai
+    password: 3456634566
+    url: jdbc:mysql://localhost:3306/2025_2_26_pet?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    driver-class-name: com.mysql.jdbc.Driver
+  devtools:
+    restart:
+      enabled: true #开启热部署
+  freemarker:
+    cache: false #页面不加载缓存 修改及时生效
+  servlet:
+    multipart:
+      max-file-size: 200MB
+      max-request-size: 200MB
+
+mybatis-plus:
+  type-aliases-package: com.peanut.entity
+  mapper-locations: classpath:mappers/*Mapper.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+server:
+  port: 9999

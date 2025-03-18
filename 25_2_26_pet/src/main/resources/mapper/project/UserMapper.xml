@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.project.mapper.UserMapper">
+    
+    <resultMap type="User" id="UserResult">
+        <result property="id"    column="id"    />
+        <result property="userAccount"    column="user_account"    />
+        <result property="userPassword"    column="user_password"    />
+        <result property="userPermissions"    column="user_permissions"    />
+        <result property="userNickname"    column="user_nickname"    />
+        <result property="userAge"    column="user_age"    />
+        <result property="totalFocusTime"    column="total_focus_time"    />
+        <result property="userSex"    column="user_sex"    />
+        <result property="userPic"    column="user_pic"    />
+        <result property="coins"    column="coins"    />
+    </resultMap>
+
+    <sql id="selectUserVo">
+        select id, user_account, user_password, user_permissions, user_nickname, user_age, total_focus_time, user_sex, user_pic, coins from user
+    </sql>
+
+    <select id="selectUserList" parameterType="User" resultMap="UserResult">
+        <include refid="selectUserVo"/>
+        <where>  
+            <if test="userAccount != null  and userAccount != ''"> and user_account = #{userAccount}</if>
+            <if test="userPassword != null  and userPassword != ''"> and user_password = #{userPassword}</if>
+            <if test="userPermissions != null  and userPermissions != ''"> and user_permissions = #{userPermissions}</if>
+            <if test="userNickname != null  and userNickname != ''"> and user_nickname like concat('%', #{userNickname}, '%')</if>
+            <if test="userAge != null  and userAge != ''"> and user_age = #{userAge}</if>
+            <if test="totalFocusTime != null  and totalFocusTime != ''"> and total_focus_time = #{totalFocusTime}</if>
+            <if test="userSex != null  and userSex != ''"> and user_sex = #{userSex}</if>
+            <if test="userPic != null  and userPic != ''"> and user_pic = #{userPic}</if>
+            <if test="coins != null  and coins != ''"> and coins = #{coins}</if>
+        </where>
+    </select>
+    
+    <select id="selectUserById" parameterType="Long" resultMap="UserResult">
+        <include refid="selectUserVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertUser" parameterType="User" useGeneratedKeys="true" keyProperty="id">
+        insert into user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userAccount != null">user_account,</if>
+            <if test="userPassword != null">user_password,</if>
+            <if test="userPermissions != null">user_permissions,</if>
+            <if test="userNickname != null">user_nickname,</if>
+            <if test="userAge != null">user_age,</if>
+            <if test="totalFocusTime != null">total_focus_time,</if>
+            <if test="userSex != null">user_sex,</if>
+            <if test="userPic != null">user_pic,</if>
+            <if test="coins != null">coins,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userAccount != null">#{userAccount},</if>
+            <if test="userPassword != null">#{userPassword},</if>
+            <if test="userPermissions != null">#{userPermissions},</if>
+            <if test="userNickname != null">#{userNickname},</if>
+            <if test="userAge != null">#{userAge},</if>
+            <if test="totalFocusTime != null">#{totalFocusTime},</if>
+            <if test="userSex != null">#{userSex},</if>
+            <if test="userPic != null">#{userPic},</if>
+            <if test="coins != null">#{coins},</if>
+         </trim>
+    </insert>
+
+    <update id="updateUser" parameterType="User">
+        update user
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="userAccount != null">user_account = #{userAccount},</if>
+            <if test="userPassword != null">user_password = #{userPassword},</if>
+            <if test="userPermissions != null">user_permissions = #{userPermissions},</if>
+            <if test="userNickname != null">user_nickname = #{userNickname},</if>
+            <if test="userAge != null">user_age = #{userAge},</if>
+            <if test="totalFocusTime != null">total_focus_time = #{totalFocusTime},</if>
+            <if test="userSex != null">user_sex = #{userSex},</if>
+            <if test="userPic != null">user_pic = #{userPic},</if>
+            <if test="coins != null">coins = #{coins},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteUserById" parameterType="Long">
+        delete from user where id = #{id}
+    </delete>
+
+    <delete id="deleteUserByIds" parameterType="String">
+        delete from user where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

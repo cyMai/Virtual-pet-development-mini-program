@@ -1,0 +1,56 @@
+<!--pages/record/record.wxml-->
+<view class="container">
+  <!-- 顶部统计区域 -->
+  <view class="stats-section">
+    <view class="stats-item">
+      <text class="stats-value">{{todayTime || 0}}</text>
+      <text class="stats-label">今日专注(分钟)</text>
+    </view>
+    <view class="stats-item">
+      <text class="stats-value">{{todayCount || 0}}</text>
+      <text class="stats-label">专注次数</text>
+    </view>
+  </view>
+
+  <!-- 记录列表 -->
+  <view class="record-list">
+
+    <view class="record-title">今日记录</view>
+    <view class="record-item" wx:for="{{records}}" wx:key="id">
+      <view class="record-left">
+        <text class="record-name">{{item.focusName}}</text>
+        <text class="record-time">{{item.createdTime}}</text>
+      </view>
+      <view class="record-right">
+        <text class="focus-time">{{item.focusTime}}分钟</text>
+        <text class="exp-gained">+{{item.expGained}}经验</text>
+      </view>
+
+    </view>
+
+
+
+    <view class="record-title">今日活动</view>
+    <view class="record-item" wx:for="{{activityRecords}}" wx:key="id">
+      <view class="record-left">
+        <text class="record-name">{{item.type}}</text>
+        <text class="record-name">{{item.description}}</text>
+        <text class="record-time">{{item.createdTime}}</text>
+      </view>
+    </view>
+
+    <view class="record-title">今日游戏</view>
+    <view class="record-item" wx:for="{{gameRecords}}" wx:key="id">
+      <view class="record-left">
+        <text class="record-name">{{item.type}}</text>
+        <text class="record-time">{{item.createdTime}}</text>
+      </view>
+    </view>
+    <!-- 无数据展示 -->
+    <view class="no-data" wx:if="{{!records.length && !gameRecords.length &&  !activityRecords}}">
+      <image src="/images/com/kuku.jpg" mode="aspectFit"></image>
+      <text>今天还没有专注记录哦~</text>
+    </view>
+
+  </view>
+</view>

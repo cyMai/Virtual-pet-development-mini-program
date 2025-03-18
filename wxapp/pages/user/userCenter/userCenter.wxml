@@ -1,0 +1,16 @@
+<!--pages/user/userCenter/userCenter.wxml-->
+<view class="container">
+  <view class="avatar-section">
+    <image class="avatar" src="{{userInfo.userPic}}" mode="aspectFill"></image>
+    <text class="change-avatar" bindtap="changeAvatar">更换头像</text>
+  </view>
+
+  <view class="form-section">
+    <view class="form-item">
+      <text class="label">昵称</text>
+      <input class="input" value="{{userInfo.userNickname}}" bindinput="onNicknameInput" placeholder="请输入昵称"/>
+    </view>
+  </view>
+
+  <button class="save-btn" bindtap="saveChanges">保存修改</button>
+</view>

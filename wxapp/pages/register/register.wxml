@@ -1,0 +1,40 @@
+<!--pages/login/login.wxml-->
+<view class="background">
+  <view class="title">{{keyword}}注册</view>
+
+  <view class="input-box">
+    <input 
+      placeholder="请输入{{keyword}}" 
+      placeholder-class="plas" 
+      type="text" 
+      class="inputs" 
+      bindinput="accountInput" 
+    />
+  </view>
+
+  <view class="input-box">
+    <input 
+      placeholder="请输入密码" 
+      placeholder-class="plas" 
+      type="password" 
+      class="inputs" 
+      bindinput="passwordInput" 
+    />
+  </view>
+
+  <view class="input-box">
+    <input 
+      placeholder="请再次输入密码" 
+      placeholder-class="plas" 
+      type="password" 
+      class="inputs" 
+      bindinput="passwordInput2" 
+    />
+  </view>
+
+  <view class="click" bindtap="signin">注册</view>
+
+  <view class="options">
+    <text class="option-btn" bindtap="regist">已有账号？登录</text>
+  </view>
+</view>

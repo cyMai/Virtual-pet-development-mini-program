@@ -1,0 +1,15 @@
+<view class="container">
+  <image class="background-image" src="/images/com/game.jpg"></image>
+<view class="game-list">
+  <view class="game-box" bindtap="goTo2048">
+    <view class="game-icon">2048</view>
+    <text class="game-name">2048</text>
+    <text class="game-desc">经典小游戏</text>
+  </view>
+  <view class="game-box" bindtap="goToGuess">
+    <view class="game-icon">猜</view>
+    <text class="game-name">猜成语</text>
+    <text class="game-desc">趣味文字游戏</text>
+  </view>
+</view>
+</view> 

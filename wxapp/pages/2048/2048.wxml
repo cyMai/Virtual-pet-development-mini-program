@@ -1,0 +1,25 @@
+<view class="container">
+  <view class="score-board">
+    <view class="score-box">
+      <text class="label">得分</text>
+      <text class="value">{{score}}</text>
+    </view>
+    <view class="score-box">
+      <text class="label">最高分</text>
+      <text class="value">{{bestScore}}</text>
+    </view>
+  </view>
+
+  <view class="tip-section">
+    <text class="tip">合并相同的数字，得到2048吧！</text>
+    <view class="action-btn" bindtap="undoMove">↺ 撤回</view>
+  </view>
+
+  <view class="game-board" bindtouchstart="touchStart" bindtouchend="touchEnd">
+    <view class="grid-row" wx:for="{{board}}" wx:for-item="row" wx:for-index="i" wx:key="i">
+      <view class="grid-cell {{getCellClass(row[j])}}" wx:for="{{row}}" wx:for-item="cell" wx:for-index="j" wx:key="j">
+        {{cell || ''}}
+      </view>
+    </view>
+  </view>
+</view> 

@@ -1,0 +1,36 @@
+<!--pages/wardrobe/wardrobe.wxml-->
+<view class="container">
+  <view class="header">
+    <view class="balance">
+      <text class="balance-text">我的金币:</text>
+      <text class="balance-num">{{userInfo.coins || 0}}</text>
+    </view>
+  </view>
+
+  <view class="items-grid">
+    <view class="item" wx:for="{{clothes}}" wx:key="id">
+      <image src="{{item.isOwned ? '/images/com/delivery.jpg' : '/images/com/item.jpg'}}" 
+             mode="aspectFill"></image>
+      <view class="item-info">
+        <text class="item-name">{{item.name}}</text>
+        <text class="item-price">{{item.price}} 金币</text>
+        <button class="buy-btn" bindtap="buyClothes" 
+                data-id="{{item.id}}" 
+                data-price="{{item.price}}"
+                disabled="{{item.isOwned}}"
+        >{{item.isOwned ? '已拥有' : '购买'}}</button>
+      </view>
+    </view>
+  </view>
+
+  <!-- 购买结果弹窗 -->
+  <view class="modal" wx:if="{{showSuccessModal || showFailModal}}">
+    <view class="modal-mask"></view>
+    <view class="modal-content">
+      <image class="modal-image" src="{{showSuccessModal ? '/images/com/delivery.jpg' : '/images/com/kuku.jpg'}}"></image>
+      <view class="modal-title">{{showSuccessModal ? '购买成功' : '金币不足'}}</view>
+      <view class="modal-text">{{showSuccessModal ? '期待新的服饰~' : '我们再努力努力...'}}</view>
+      <button class="modal-btn" bindtap="closeModal">确定</button>
+    </view>
+  </view>
+</view>

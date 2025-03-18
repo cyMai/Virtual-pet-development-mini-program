@@ -1,0 +1,158 @@
+.container {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+}
+
+.bg-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.focus-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 60rpx 40rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.status {
+  font-size: 32rpx;
+  color: #333333;
+  text-align: left;
+  margin-bottom: 100rpx;
+  margin-left: 120rpx;
+  align-self: flex-start;
+  opacity: 0.8;
+  letter-spacing: 4rpx;
+  font-weight: 300;
+}
+
+.time {
+  font-size: 120rpx;
+  color: #333333;
+  text-align: center;
+  font-weight: 200;
+  letter-spacing: 8rpx;
+  font-family: 'Helvetica Neue', sans-serif;
+  opacity: 0.85;
+  margin-bottom: 80rpx;
+}
+
+.control-btns {
+  display: flex;
+  gap: 40rpx;
+  margin-top: 20rpx;
+}
+
+.control-btn {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.control-btn.pause {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.control-btn.finish {
+  background: #4CAF50;
+}
+
+.control-btn.finish text {
+  color: white;
+}
+
+.control-btn text {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 300;
+  letter-spacing: 2rpx;
+  transition: all 0.3s ease;
+}
+
+.pet-message {
+  position: fixed;
+  bottom: 100rpx;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 28rpx;
+  color: #666666;
+  z-index: 2;
+  letter-spacing: 2rpx;
+  opacity: 0.7;
+  font-weight: 300;
+}
+
+.end-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.end-content {
+  width: 80%;
+  background: white;
+  border-radius: 20rpx;
+  padding: 40rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.end-image {
+  width: 200rpx;
+  height: 200rpx;
+  margin: 20rpx 0;
+}
+
+.end-text {
+  font-size: 32rpx;
+  color: #333;
+  margin: 30rpx 0;
+  text-align: center;
+  line-height: 1.5;
+  letter-spacing: 2rpx;
+}
+
+.end-btn {
+  width: 200rpx;
+  height: 80rpx;
+  background: #f5f5f5;
+  border-radius: 40rpx;
+  font-size: 28rpx;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20rpx;
+}
+
+.end-btn::after {
+  border: none;
+} 

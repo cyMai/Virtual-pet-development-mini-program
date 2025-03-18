@@ -1,0 +1,71 @@
+<view class="container">
+  <!-- 顶部文字和图片区域 -->
+  <view class="top-section">
+    <view class="greeting">
+      <text>{{greeting}}，主人</text>
+      <text>期待和你见面的那天</text>
+    </view>
+    <view class="box-image">
+      <image src="{{petImage}}" mode="aspectFit"></image>
+    </view>
+  </view>
+
+  <!-- 成长等级区域 -->
+  <view class="growth-section">
+    <view class="left-section">
+      <view class="level-item">
+        <text>成长等级</text>
+        <view class="level-bar">
+          <view class="level-progress" style="width: {{petInfo.level * 10}}%"></view>
+          <text class="level-text">Lv.{{petInfo.level || 0}}</text>
+        </view>
+      </view>
+      <view class="level-item">
+        <text>当前经验</text>
+        <view class="level-bar">
+          <view class="level-progress" style="width: {{(petInfo.exp % 100)}}%"></view>
+          <text class="level-text">{{petInfo.exp || 0}}/100</text>
+        </view>
+      </view>
+      <view class="level-item">
+        <text>心情指数</text>
+        <view class="level-bar">
+          <view class="level-progress" style="width: {{petInfo.mood}}%"></view>
+          <text class="level-text">{{petInfo.mood || 0}}%</text>
+        </view>
+      </view>
+    </view>
+    <view class="right-section">
+      <text>{{currentDate}}</text>
+      <text>总共专注时长{{userInfo.totalFocusTime || 0}}分钟</text>
+    </view>
+  </view>
+
+  <!-- 三个图标区域 -->
+  <view class="icon-section">
+    <view class="icon-item" bindtap="goToTimer">
+      <image src="../../images/svg/time.jpg"></image>
+    </view>
+    <view class="icon-item" bindtap="goToGame">
+      <image src="../../images/svg/game.jpg"></image>
+    </view>
+    <view class="icon-item" bindtap="goToActivity">
+      <image src="../../images/svg/other.jpg"></image>
+    </view>
+  </view>
+
+  <!-- 底部按钮区域 -->
+  <view class="button-section">
+    <view class="time-record" bindtap="navigateToRecord">
+      <text>时光记录</text>
+    </view>
+    <view class="right-buttons">
+      <view class="button" bindtap="goToWardrobe">
+        <text>衣帽间</text>
+      </view>
+      <view class="button" bindtap="toManual">
+        <text>饲养指南</text>
+      </view>
+    </view>
+  </view>
+</view> 

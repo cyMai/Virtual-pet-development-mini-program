@@ -1,0 +1,58 @@
+<!--pages/user/user.wxml-->
+
+
+  <view class='userinfo' bind:tap="userinfo">
+<view class='userinfo-avatar' >
+  <image src="{{userInfo.userPic}}" mode="aspectFill" class="touxiang"/>
+ </view>
+ <view class="youbian">
+ <view style="display: flex;">
+   <view class='userinfo-name'>
+   {{userInfo.userNickname || '未设置昵称'}}
+ </view>
+ </view>
+
+ </view>
+
+</view>
+
+<!-- 数据统计区域 -->
+<view class="stats-grid">
+  <view class="stat-item">
+    <view class="stat-icon">🎮</view>
+    <text class="stat-label">宠物等级</text>
+    <text class="stat-value">{{petInfo.level || 0}}</text>
+  </view>
+  <view class="stat-item">
+    <view class="stat-icon">🏆</view>
+    <text class="stat-label">最高分</text>
+    <text class="stat-value">{{userInfo.maxScore || 0}}</text>
+  </view>
+  <view class="stat-item">
+    <view class="stat-icon">💰</view>
+    <text class="stat-label">金币</text>
+    <text class="stat-value">{{userInfo.coins || 0}}</text>
+  </view>
+  <view class="stat-item">
+    <view class="stat-icon">⏱️</view>
+    <text class="stat-label">专注时长</text>
+    <text class="stat-value">{{userInfo.totalFocusTime || 0}}分钟</text>
+  </view>
+</view>
+
+  <view class='list-cont'>
+    <view class='my-menu'>
+      <view class='memu-item' bindtap='toUserCenter'>
+        <view class="stat-icon">⚙️</view>
+        <text>个人信息</text>
+        <view class='arrowhead'></view>
+      </view>
+      <view class='memu-item' bindtap='toMyPet'>
+        <view class="stat-icon">ℹ️</view>
+        <text>我的宠物</text>
+        <view class='arrowhead'></view>
+      </view>
+    </view>
+  </view>
+
+

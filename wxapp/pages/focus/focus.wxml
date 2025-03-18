@@ -1,0 +1,28 @@
+<view class="container">
+  <view class="focus-content">
+    <view class="status">正在{{taskName}}</view>
+    <view class="time">{{time}}</view>
+    <view class="control-btns">
+      <view class="control-btn pause" bindtap="pauseTimer">
+        <text>{{isPaused ? '开始' : '暂停'}}</text>
+      </view>
+      <view class="control-btn stop" bindtap="stopTimer">
+        <text>结束</text>
+      </view>
+      <view class="control-btn finish" bindtap="finishNow">
+        <text>完成(测试)</text>
+      </view>
+    </view>
+  </view>
+  <view class="pet-message">{{petName}}也在{{type === 'study' ? '学习' : '玩耍'}}中哦~</view>
+  <image class="bg-image" src="{{bgImage}}" mode="aspectFill"></image>
+
+  <!-- 结束弹窗 -->
+  <view class="end-modal" wx:if="{{showEndModal}}">
+    <view class="end-content">
+      <image class="end-image" src="{{isSuccess ? '/images/com/delivery.jpg' : '/images/com/kuku.jpg'}}" mode="aspectFit"></image>
+      <view class="end-text">{{isSuccess ? '今天和' + petName + '一起' + taskName + '了' + totalMinutes + '分钟~' : '挑战失败~' + petName + '的快递包装被加固了...'}}</view>
+      <button class="end-btn" bindtap="backToMain">返回首页</button>
+    </view>
+  </view>
+</view> 

@@ -1,0 +1,40 @@
+<!--pages/myPet/myPet.wxml-->
+<view class="container">
+  <!-- 顶部标题 -->
+  <view class="header">
+    <text class="title">创建我的宠物</text>
+  </view>
+
+  <!-- 宠物类型选择 -->
+  <view class="type-section">
+    <text class="section-title">选择宠物类型</text>
+    <view class="type-options">
+      <view class="type-item {{selectedType === 'cat' ? 'selected' : ''}}" bindtap="selectType" data-type="cat">
+        <image src="/images/dog/dog2.jpg" mode="aspectFit"></image>
+        <text>猫咪</text>
+      </view>
+      <view class="type-item {{selectedType === 'dog' ? 'selected' : ''}}" bindtap="selectType" data-type="dog">
+        <image src="/images/dog/dog3.jpg" mode="aspectFit"></image>
+        <text>狗狗</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 宠物名称输入 -->
+  <view class="name-section">
+    <text class="section-title">给宠物起个名字</text>
+    <input class="name-input" 
+           type="text" 
+           placeholder="请输入宠物名称" 
+           value="{{petName}}"
+           bindinput="onNameInput"
+           maxlength="10"/>
+  </view>
+
+  <!-- 创建按钮 -->
+  <view class="button-section">
+    <button class="create-btn" bindtap="createPet" disabled="{{!selectedType || !petName}}">
+      创建宠物
+    </button>
+  </view>
+</view>

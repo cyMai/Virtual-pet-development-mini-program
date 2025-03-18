@@ -1,0 +1,54 @@
+<!--pages/guess/guess.wxml-->
+<view class="container">
+  <view class="score-section">
+    <text class="score-text">已猜对：{{score}}题</text>
+  </view>
+
+  <view class="emoji-section">
+    <text class="emoji" wx:for="{{currentEmojis}}" wx:key="index">{{item}}</text>
+  </view>
+  
+  <view class="control-btns">
+    <view class="control-btn hint" bindtap="showHint">
+      <text>提示</text>
+    </view>
+    <view class="control-btn stop" bindtap="giveUp">
+      <text>结束</text>
+    </view>
+  </view>
+
+  <view class="input-section">
+    <input 
+      class="guess-input" 
+      placeholder="输入你猜的成语" 
+      value="{{userGuess}}"
+      bindinput="onInput"
+    />
+    <button class="submit-btn" bindtap="checkAnswer">确认</button>
+  </view>
+
+  <!-- 提示弹窗 -->
+  <view class="modal" wx:if="{{showHintModal}}">
+    <view class="modal-content">
+      <text class="hint-text">提示：{{currentHint}}</text>
+      <button class="modal-btn" bindtap="closeHint">知道了</button>
+    </view>
+  </view>
+
+  <!-- 结束弹窗 -->
+  <view class="modal" wx:if="{{showGiveUpModal}}">
+    <view class="modal-content">
+      <text class="hint-text">正确答案：{{currentAnswer}}</text>
+      <button class="modal-btn" bindtap="closeGiveUp">知道了</button>
+    </view>
+  </view>
+
+  <!-- 成功弹窗 -->
+  <view class="modal" wx:if="{{showSuccessModal}}">
+    <view class="modal-content">
+      <image class="modal-image" src="/images/com/delivery.jpg" mode="aspectFit"></image>
+      <text>恭喜你猜对啦！</text>
+      <button class="modal-btn" bindtap="nextIdiom">下一个</button>
+    </view>
+  </view>
+</view>
